@@ -1,0 +1,337 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+@font-face {
+  font-family: 'Digital Numbers Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Digital Numbers Regular'), url('/fonts/DigitalNumbers-Regular.woff') format('woff');
+  }
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* COLORS */
+  /* backgrounds*/
+  --clr-background-1: hsl(222, 26%, 31%);
+  --clr-background-2: hsl(223, 31%, 20%);
+  --clr-background-3: hsl(224, 36%, 15%);
+
+  --clr-key-num: hsl(30, 25%, 89%);
+  --clr-key-num-shadow: hsl(28, 16%, 65%);
+  --clr-key-num-hover: hsl(30, 25%, 79%);
+
+  --clr-key-reset: hsl(225, 21%, 49%);
+  --clr-key-reset-shadow: hsl(224, 28%, 35%);
+  --clr-key-reset-hover: hsl(225, 21%, 29%);
+
+  --clr-key-total: hsl(6, 63%, 50%);
+  --clr-key-total-shadow: hsl(6, 70%, 34%);
+  --clr-key-total-hover: hsl(6, 63%, 30%);
+
+  --clr-text-1: hsl(221, 14%, 31%);
+  --clr-text-2: hsl(0, 0%, 100%);
+  --clr-text-3: hsl(0, 0%, 100%);
+
+  /* FONTS */
+  --ff-primary: 'Spartan', 'Spartan', sans-serif;
+  /* --ff-primary: 'Digital Numbers Regular', 'Spartan', sans-serif; */
+
+  --fs-100: 0.5rem;
+  --fs-150: 0.75rem;
+  --fs-200: 1rem;
+  --fs-250: 1.25rem;
+  --fs-300: 1.5rem;
+  --fs-350: 1.75rem;
+  --fs-400: 2rem;
+  --fs-450: 2.25rem;
+  --fs-500: 2.5rem;
+  --fs-550: 2.75rem;
+  --fs-600: 3rem;
+  --fs-700: 3.5rem;
+  --fs-800: 4rem;
+  --fs-900: 5rem;
+
+  /* OTHER */
+  /* --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
+  --min-width: 600px;
+  --fixed-width: 620px;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-background-1);
+  color: var(--clr-text-3);
+  line-height: 1.5;
+  font-size: 0.625rem;
+  min-height: 50rem;
+}
+
+
+.caps {
+  text-transform: uppercase;
+}
+
+/*
+=============== 
+Calculator
+===============
+*/
+
+.article-center {
+  display: grid;
+  place-items: center;
+  height: max-content;
+  width: 21rem;
+  margin: 3rem auto auto auto;
+  gap: 1rem;
+}
+
+.section-center {
+  padding: 0.25rem;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .article-center {
+    width: 34rem;
+  }
+}
+
+
+/* section 1 */
+
+.section-01 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4em;
+  padding: 0.5rem 0rem;
+  color: var(--clr-text-2);
+}
+
+#calc {
+  font-size: var(--fs-400);
+  padding-left: 0.25rem;
+}
+
+.themes {
+  /* width: 10rem; */
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1rem, repeat(3, 1.5rem);
+  grid-template-rows: 1.5rem 2rem;
+  grid-template-areas: ". theme-1 theme-2 theme-3"
+                        "theme guage guage guage";
+}
+
+.themes * {
+  place-self: center;
+}
+
+.theme-label {
+  grid-area: theme;
+  font-size: var(--fs-150);
+  padding: 0 1.5rem;
+}
+
+.theme-selected, .theme-number {
+  position: relative;
+  width: 1.5rem;
+  font-size: var(--fs-150);
+  cursor: pointer;
+}
+
+.theme-selected, .theme-number:hover {
+  background: var(--clr-background-2);
+}
+
+.theme-selected::after, .theme-number:hover::after {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transform: translate(-0.8em, 0.75em) rotate(45deg);
+  background: var(--clr-background-2);
+  z-index: -1;
+}
+
+.theme-selected, .theme-selected::after {
+  background: var(--clr-background-2);
+}
+
+.theme-1 {
+  grid-area: theme-1;
+}
+
+.theme-2 {
+  grid-area: theme-2;
+}
+
+.theme-3 {
+  grid-area: theme-3;
+}
+
+.theme-guage{
+  grid-area: guage;
+  position: relative;
+  background: var(--clr-background-2);
+  height: 80%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.theme-selector {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 0.25rem;
+  left: 0.25rem;
+  background: var(--clr-key-total);
+  border-radius: 100%;
+}
+
+
+
+/* section 2 */
+.display-container {
+  background-color: var(--clr-background-3);
+  border-radius: 0.8em;
+  display: grid;
+  grid-template-rows: 90%, 10%;
+  justify-content: right;
+  min-height: 6rem;
+  text-align: right;
+}
+
+.display-number {
+  margin: auto 0.5em;
+  padding-top: 0.5em;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  color: var(--clr-text-2);
+  width: 8.5em;
+}
+
+.display-calc {
+  margin: 0 0.5em;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-200);
+  color: var(--clr-text-2);
+}
+
+@media only screen and (min-width: 600px) {
+  .display-container {
+    min-height: 8rem;
+  }
+  
+  .display-number {
+    font-size: var(--fs-550);
+  }
+}
+
+
+/* section 3 */
+.key-container {
+  background: var(--clr-background-2);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 3.75rem);
+  grid-template-rows: repeat(5, 4rem);
+  gap: 0.75rem 1rem;
+  place-content: center;
+  height: max-content;
+  padding: 1rem;
+}
+
+.key {
+  border: none;
+  border-radius: 0.25rem;
+  font-family: var(--ff-primary);
+}
+
+
+.btn-clr-1 {
+  background: var(--clr-key-num);
+  color: var(--clr-text-1);
+  font-size: var(--fs-350);
+  box-shadow: inset 0 -3px 0 0 var(--clr-key-num-shadow);
+}
+
+.btn-clr-2 {
+  background: var(--clr-key-reset);
+  color: var(--clr-text-3);
+  font-size: var(--fs-200);
+  box-shadow: inset 0 -3px 0 0 var(--clr-key-reset-shadow);
+}
+
+.btn-clr-3 {
+  background: var(--clr-key-total);
+  color: var(--clr-text-3);
+  font-size: var(--fs-200);
+  box-shadow: inset 0 -3px 0 0 var(--clr-key-total-shadow);
+}
+
+.key:hover {
+  cursor: pointer;
+}
+
+.btn-clr-1:hover {
+  background: var(--clr-key-num-hover);
+}
+
+.btn-clr-2:hover {
+  background: var(--clr-key-reset-hover);
+}
+
+.btn-clr-3:hover {
+  background: var(--clr-key-total-hover);
+}
+
+.grid-2 {
+  grid-column: span 2;
+}
+
+@media only screen and (min-width: 600px) {
+  .key-container {
+    border-radius: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: repeat(5, 4rem);
+    gap: 1.5rem 1.25rem;
+    place-content: center;
+    height: max-content;
+    padding: 2rem;
+  }
+
+  .key {
+    border: none;
+    border-radius: 0.5rem;
+    font-family: var(--ff-primary);
+  }
+}

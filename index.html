@@ -3,55 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="calculator" content="calculator tutorial from frontend mentor">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-01.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Calculator app</title>
+  
 </head>
 <body>
   <article class="article-center">
-    <section class="section-center">
-      <h1>calc</h1>
+    <section class="section-center section-01" aria-labelledby="calc">
+      <h1 id="calc">calc</h1>
       <div class="themes">
-        <h2>theme</h2>
-        <div class="theme-number">1</div>
-        <div class="theme-number">2</div>
-        <div class="theme-number">3</div>
-        <div class="theme-guage"></div>
-        <div class="theme-selector"></div>
+        <h2 class="caps theme-label">theme</h2>
+        <h2 class="theme-number theme-1 theme-selected" data-id="0">1</h2>
+        <h2 class="theme-number theme-2" data-id="1">2</h2>
+        <h2 class="theme-number theme-3" data-id="2">3</h2>
+        <div class="theme-guage">
+          <div class="theme-selector"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section-center">
+    <section aria-labelledby="display-number" class="section-center">
       <div class="display-container">
-        <div class="display-number">399,981</div>
+        <h2 class="display-number">0</h2>
+        <p class="display-calc">0</p>
       </div>
     </section>
 
     <section class="section-center">
-      <div class="buttons-container">
-        <button class="key" data-action="7">7</button>
-        <button class="key" data-action="8">8</button>
-        <button class="key" data-action="9">9</button>
-        <button class="key" data-action="del">del</button>
-        <button class="key" data-action="4">4</button>
-        <button class="key" data-action="5">5</button>
-        <button class="key" data-action="6">6</button>
-        <button class="key" data-action="+">+</button>
-        <button class="key" data-action="1">1</button>
-        <button class="key" data-action="2">2</button>
-        <button class="key" data-action="3">3</button>
-        <button class="key" data-action="-">-</button>
-        <button class="key" data-action=".">.</button>
-        <button class="key" data-action="0">0</button>
-        <button class="key" data-action="/">/</button>
-        <button class="key" data-action="*">x</button>
-        <button class="key" data-action="reset">reset</button>
-        <button class="key" data-action="=">=</button>
+      <div class="key-container">
+        <button class="key btn-clr-1" data-action="7">7</button>
+        <button class="key btn-clr-1" data-action="8">8</button>
+        <button class="key btn-clr-1" data-action="9">9</button>
+        <button class="key btn-clr-2 caps" data-action="del">del</button>
+        <button class="key btn-clr-1" data-action="4">4</button>
+        <button class="key btn-clr-1" data-action="5">5</button>
+        <button class="key btn-clr-1" data-action="6">6</button>
+        <button class="key btn-clr-1" data-action="+">+</button>
+        <button class="key btn-clr-1" data-action="1">1</button>
+        <button class="key btn-clr-1" data-action="2">2</button>
+        <button class="key btn-clr-1" data-action="3">3</button>
+        <button class="key btn-clr-1" data-action="-">-</button>
+        <button class="key btn-clr-1" data-action=".">.</button>
+        <button class="key btn-clr-1" data-action="0">0</button>
+        <button class="key btn-clr-1" data-action="/">/</button>
+        <button class="key btn-clr-1" data-action="*">x</button>
+        <button class="key btn-clr-2 grid-2 caps" data-action="reset">reset</button>
+        <button class="key btn-clr-3 grid-2" data-action="=">=</button>
       </div>
     </section>
 
   </article>
+
+  <script src="index.js"></script>
 
 </body>
 </html>
