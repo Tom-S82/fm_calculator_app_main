@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <meta name="calculator" content="calculator tutorial from frontend mentor">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style-01.css">
+  <link id="style-theme" rel="stylesheet" href="style-theme-0.css">
+  <link rel="stylesheet" href="default.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Calculator app</title>
   
@@ -25,7 +26,7 @@
       </div>
     </section>
 
-    <section aria-labelledby="display-number" class="section-center">
+    <section class="section-center" aria-labelledby="display-number" >
       <div class="display-container">
         <h2 class="display-number">0</h2>
         <p class="display-calc">0</p>
@@ -34,24 +35,24 @@
 
     <section class="section-center">
       <div class="key-container">
-        <button class="key btn-clr-1" data-action="7">7</button>
-        <button class="key btn-clr-1" data-action="8">8</button>
-        <button class="key btn-clr-1" data-action="9">9</button>
-        <button class="key btn-clr-2 caps" data-action="del">del</button>
-        <button class="key btn-clr-1" data-action="4">4</button>
-        <button class="key btn-clr-1" data-action="5">5</button>
-        <button class="key btn-clr-1" data-action="6">6</button>
-        <button class="key btn-clr-1" data-action="+">+</button>
-        <button class="key btn-clr-1" data-action="1">1</button>
-        <button class="key btn-clr-1" data-action="2">2</button>
-        <button class="key btn-clr-1" data-action="3">3</button>
+        <button class="key btn-clr-1" data-action="7" alt="7">7</button>
+        <button class="key btn-clr-1" data-action="8" alt="8">8</button>
+        <button class="key btn-clr-1" data-action="9" alt="9">9</button>
+        <button class="key btn-clr-2 caps" data-action="del" alt="Delete Digit">del</button>
+        <button class="key btn-clr-1" data-action="4" alt="4">4</button>
+        <button class="key btn-clr-1" data-action="5" alt="5">5</button>
+        <button class="key btn-clr-1" data-action="6" alt="6">6</button>
+        <button class="key btn-clr-1" data-action="+" alt="Add">+</button>
+        <button class="key btn-clr-1" data-action="1" alt="2">1</button>
+        <button class="key btn-clr-1" data-action="2" alt="2">2</button>
+        <button class="key btn-clr-1" data-action="3" alt="3">3</button>
         <button class="key btn-clr-1" data-action="-">-</button>
-        <button class="key btn-clr-1" data-action=".">.</button>
-        <button class="key btn-clr-1" data-action="0">0</button>
-        <button class="key btn-clr-1" data-action="/">/</button>
-        <button class="key btn-clr-1" data-action="*">x</button>
-        <button class="key btn-clr-2 grid-2 caps" data-action="reset">reset</button>
-        <button class="key btn-clr-3 grid-2" data-action="=">=</button>
+        <button class="key btn-clr-1" data-action="." alt=".">.</button>
+        <button class="key btn-clr-1" data-action="0" alt="0">0</button>
+        <button class="key btn-clr-1" data-action="/" alt="Divide">/</button>
+        <button class="key btn-clr-1" data-action="*" alt="Multiply">x</button>
+        <button class="key btn-clr-2 grid-2 caps" data-action="reset" alt="(R)eset">reset</button>
+        <button class="key btn-clr-3 grid-2" data-action="=" alt="Equals">=</button>
       </div>
     </section>
 

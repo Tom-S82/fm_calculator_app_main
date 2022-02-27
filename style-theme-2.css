@@ -1,0 +1,55 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* COLORS */
+  /* backgrounds*/
+  --clr-background-1: hsl(268, 75%, 9%);
+  --clr-background-2: hsl(268, 85%, 12%);
+  --clr-background-3: hsl(268, 85%, 12%);
+
+  --clr-key-num: hsl(268, 47%, 21%);
+  --clr-key-num-shadow: hsl(290, 70%, 36%);
+  --clr-key-num-hover: hsl(268, 47%, 1%);
+
+  --clr-key-reset: hsl(281, 89%, 26%);
+  --clr-key-reset-shadow: hsl(285, 91%, 52%);
+  --clr-key-reset-hover: hsl(281, 89%, 6%);
+
+  --clr-key-total: hsl(176, 100%, 44%);
+  --clr-key-total-shadow: hsl(177, 92%, 70%);
+  --clr-key-total-hover: hsl(176, 100%, 24%);
+
+  --clr-text-1: hsl(52, 100%, 62%);
+  --clr-text-2: hsl(52, 100%, 62%);
+  --clr-text-3: hsl(0, 0%, 100%);
+
+  /* FONTS */
+  --ff-primary: 'Spartan', 'Spartan', sans-serif;
+
+  --fs-100: 0.5rem;
+  --fs-150: 0.75rem;
+  --fs-200: 1rem;
+  --fs-250: 1.25rem;
+  --fs-300: 1.5rem;
+  --fs-350: 1.75rem;
+  --fs-400: 2rem;
+  --fs-450: 2.25rem;
+  --fs-500: 2.5rem;
+  --fs-550: 2.75rem;
+  --fs-600: 3rem;
+  --fs-700: 3.5rem;
+  --fs-800: 4rem;
+  --fs-900: 5rem;
+
+}
