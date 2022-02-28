@@ -42,7 +42,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Page](https://github.com/Tom-S82/fm_calculator_app_main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Calculator App](https://tom-s82.github.io/fm_calculator_app_main/)
 
 ## My process
 
