@@ -5,7 +5,10 @@ const themes = document.querySelectorAll(".theme-number");
 const themeSelector = document.querySelector(".theme-selector");
 const styleTheme = document.querySelector('#style-theme');
 
-let themeId = 0;
+if(!localStorage.getItem("themeId")){
+  localStorage.setItem("themeId", 0);
+}
+let themeId = localStorage.getItem("themeId");
 const themeCount = themes.length;
 
 themes.forEach(theme => {
@@ -22,10 +25,10 @@ themes.forEach(theme => {
 })
 
 const applyThemes = theme => {
-  styleTheme.href = `style-theme-${theme}.css`;
+  localStorage.setItem("themeId", theme);
+  styleTheme.href = `css/style-theme-${theme}.css`;
   themeSelector.style.transform = `translate(${theme * 2.5}em)`;
 }
-
 
 /* ****************************************** */
 /* ****** CALCULATOR FUNCTIONALITY ********** */
@@ -248,14 +251,16 @@ document.addEventListener("keypress", e => {
   if(key === 'KeyR') { ApplyReset(); }
 
   /* Cycle through the themes using the 'T' key */
-  if(key === 'KeyT') { 
-    if(themeId < themeCount-1) {
-      themeId++
-      themes[themeId-1].classList.remove("theme-selected");
+  if(key === 'KeyT') {
+    themeId = parseInt(localStorage.getItem("themeId"));
+    if(localStorage.getItem("themeId") < themeCount-1) {
+      localStorage.setItem("themeId", parseInt(themeId)+1);
+      themes[localStorage.getItem("themeId")-1].classList.remove("theme-selected");
     } else {
-      themeId = 0;
+      localStorage.setItem("themeId", 0);
       themes[themeCount-1].classList.remove("theme-selected");
     }
+    themeId = parseInt(localStorage.getItem("themeId"));
     themes[themeId].classList.add("theme-selected");
     applyThemes(themeId);
   }

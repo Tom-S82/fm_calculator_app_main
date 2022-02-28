@@ -95,12 +95,12 @@ Calculator
   cursor: pointer;
 }
 
-.theme-selected, .theme-number:hover {
+.theme-number:hover {
   background: var(--clr-background-2);
   border-radius: 0.75em;
 }
 
-.theme-selected::after, .theme-number:hover::after {
+.theme-number:hover::after {
   content: '';
   position: absolute;
   width: 1em;
@@ -108,10 +108,6 @@ Calculator
   transform: translate(-0.7em, 0.75em) rotate(45deg);
   background: var(--clr-background-2);
   z-index: -1;
-}
-
-.theme-selected, .theme-selected::after {
-  background: var(--clr-background-2);
 }
 
 .theme-1 {
